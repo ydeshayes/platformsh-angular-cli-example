@@ -1,0 +1,14 @@
+https://{default}/:
+  type: upstream
+  redirects:
+    expires: -1s
+    paths: {}
+  ssi:
+    enabled: false
+  upstream: ui:http
+http://{default}/:
+  type: redirect
+  redirects:
+    expires: -1s
+    paths: {}
+  to: https://{default}/
